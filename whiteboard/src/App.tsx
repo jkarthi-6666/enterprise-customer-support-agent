@@ -692,6 +692,23 @@ const lldComponents: LLDComponent[] = [
       },
     ],
   },
+  {
+    id: 'human-collaboration',
+    title: '8 · Human Collaboration — low-level design',
+    subs: [
+      { name: '1. Approval Queue', tension: 'CONFIRMED (ADR 0016) — durable queue, priority aging, SLA timers, and escalation on timeout.', tools: '→ Durable queue · lease-based ownership · append-only decision audit' },
+      { name: '2. Live Handoff', tension: 'CONFIRMED (ADR 0017) — redacted context envelope with one ownership lease and resumable closure event.', tools: '→ Handoff envelope · role-based redaction · transcript references' },
+    ],
+  },
+  {
+    id: 'observability-economics',
+    title: '10–11 · Observability & Economics — low-level design',
+    subs: [
+      { name: '1. Trajectory Telemetry', tension: 'CONFIRMED (ADR 0018) — OpenTelemetry-compatible spans with tenant/run correlation and pre-export redaction.', tools: '→ OTel spans · sampling · audit event sink' },
+      { name: '2. Spend Controls', tension: 'CONFIRMED (ADR 0019) — reservation/reconciliation budgets and graceful degradation.', tools: '→ Token ledger · rate limiter · model/context fallback ladder' },
+      { name: '3. Semantic Cache', tension: 'CONFIRMED experiment (ADR 0020) — tenant-scoped, versioned, TTL-bound shadow evaluation.', tools: '→ Similarity cache · invalidation · quality gate' },
+    ],
+  },
 ]
 
 const LLD_ITEM_H = 92

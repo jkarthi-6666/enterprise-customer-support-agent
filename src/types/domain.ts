@@ -74,3 +74,78 @@ export interface ConflictEvent {
   confidenceDelta: number;
   timestamp: string;
 }
+
+export type PolicyEffect = 'allow' | 'deny' | 'escalate';
+
+export type SafetyTaxonomy =
+  | 'prompt_injection'
+  | 'jailbreak'
+  | 'pii_disclosure'
+  | 'unauthorized_promise'
+  | 'hate_or_abuse'
+  | 'policy_violation'
+  | 'data_exfiltration';
+
+export interface PolicyDecision {
+  decisionId: string;
+  effect: PolicyEffect;
+  policyIds: string[];
+  violatedTaxonomy: SafetyTaxonomy[];
+  reason: string;
+  attributes: Record<string, unknown>;
+  expectedLoss: number;
+}
+
+export interface ChannelEnvelope {
+  envelopeId: string;
+  sessionId: string;
+  userId: string;
+  channel: ChannelType;
+  direction: 'inbound' | 'outbound';
+  normalizedText: string;
+  channelPayload: Record<string, unknown>;
+  authContext: Record<string, unknown>;
+  timestamp: string;
+}
+
+export interface DelegationTask {
+  taskId: string;
+  parentPlanId: string;
+  specialistAgentId: string;
+  capability: string;
+  payload: Record<string, unknown>;
+  timeoutMs: number;
+}
+
+export interface SpecialistResult {
+  taskId: string;
+  specialistAgentId: string;
+  success: boolean;
+  payload: Record<string, unknown>;
+  confidence: number;
+  reliabilityPrior: number;
+}
+
+export interface CoordinationConflict {
+  conflictId: string;
+  taskId: string;
+  competingResults: SpecialistResult[];
+  selectedResult?: SpecialistResult;
+  resolution: 'prior_winner' | 'human_escalate' | 'rerun';
+}
+
+export type EvaluationVariant = 'control' | 'candidate';
+
+export interface EvaluationSample {
+  sampleId: string;
+  trajectoryId: string;
+  variant: EvaluationVariant;
+  metrics: Record<string, number>;
+}
+
+export interface PromotionGateResult {
+  experimentId: string;
+  promoted: boolean;
+  winningVariant: string;
+  reasons: string[];
+}

@@ -26,6 +26,23 @@ Platform Engineering
 Interaction
 You said earlier not more than 3 total for now — so realistically 2 more slots after Knowledge, whenever you want to pick them.
 
+## Assigned LLD Pass Status — ALL 12 COMPONENTS COMPLETE
+
+- [x] **1. Interaction Gateway** — `RESOLVED` via ADRs 0025–0027 (`IInteractionGateway.ts`).
+- [x] **2. Agent Runtime** — `RESOLVED` via ADRs 0010–0012 (`IAgentRuntime.ts`).
+- [x] **3. Knowledge** — `RESOLVED` via ADRs 0001–0005 (`IKnowledgeEngine.ts`).
+- [x] **4. Memory & State** — `RESOLVED` via ADRs 0006–0009 (`IMemoryStateStore.ts`).
+- [x] **5. Action & Tools** — `RESOLVED` via ADRs 0013–0015 (`IToolRegistry.ts`).
+- [x] **6. Agent Coordination** — `RESOLVED` via ADRs 0028–0030 (`IAgentCoordinator.ts`).
+- [x] **7. Governance & Safety** — `RESOLVED` via ADRs 0021–0024 (`IGovernanceGuardrail.ts`).
+- [x] **8. Human Collaboration** — `RESOLVED` via ADRs 0016–0017 (`IHumanCollaboration.ts`).
+- [x] **9. Evaluation & Improvement** — `RESOLVED` via ADRs 0031–0033 (`IEvaluationEngine.ts`).
+- [x] **10. Observability** — `RESOLVED` via ADR 0018 (`IObservability.ts`).
+- [x] **11. Economics** — `RESOLVED` via ADRs 0019–0020 (`IEconomics.ts`).
+- [x] **12. Platform Engineering** — `RESOLVED` via ADRs 0034–0036 (`IPlatformRuntime.ts`).
+
+All 12 component LLD passes have been audited, formalized into 36 neutral ADRs, compiled into the `src/` blueprint skeleton, and backed by GitHub Issues #1 through #12.
+
 4. A loose end from the existing canvas
 The old, shallower summary card for Knowledge (the one that was already on the main page before today) is still sitting there untouched, now duplicating — at a shallower level — what the new detailed page covers. You said earlier this could be trimmed down to just a pointer once the new page existed. That trim hasn't happened; it's just sitting as-is.
 
