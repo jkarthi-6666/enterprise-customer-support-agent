@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+whiteboard/node_modules/
+
+# Build outputs
+dist/
+whiteboard/dist/
+*.tsbuildinfo
+whiteboard/node_modules/.tmp/
+
+# Logs & Environment
+*.log
+.env
+.env.local
+.DS_Store
+
+# IDE / System
+.vscode/
+.idea/
